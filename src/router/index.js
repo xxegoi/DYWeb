@@ -10,6 +10,7 @@ import YZK from '@/components/admin/JXC/YZK/Yzk.vue'
 import ColorNoList from '@/components/admin/JXC/ColorNO/ColorList.vue'
 import Gylc from '@/components/admin/JXC/GYLC/List.vue'
 import Gylog from '@/components/admin/Jxc/GYLC/GYLCLog.vue'
+import TestData from '@/components/admin/Jxc/TestData/TestData_List.vue'
 
 Vue.use(Router)
 
@@ -51,6 +52,9 @@ export default new Router({
         },{
           path:'Gylog',
           component:Gylog
+        },{
+          path:'TestData',
+          component:TestData
         }
       ]
     }

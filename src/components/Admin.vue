@@ -60,16 +60,21 @@ export default {
           path: "/Admin/ColorNo"
         },
         {
+          title:'测试数据查询/导出',
+          isSubMenu:false,
+          path:'/Admin/TestData'
+        },
+        {
           title: "工艺流程管理",
           isSubMenu: true,
           subMenu: [
             {
               title: "工艺流程修改",
-              path:'/Admin/Gylc'
+              path: "/Admin/Gylc"
             },
             {
-                title:"工艺流程修改日志",
-                path:'/Admin/GyLog'
+              title: "工艺流程修改日志",
+              path: "/Admin/GyLog"
             }
           ]
         }
