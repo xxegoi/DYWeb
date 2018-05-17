@@ -140,7 +140,4 @@ export default {
   border-bottom: 1px solid #999;
 }
 
-#test{
-  
-}
 </style>
