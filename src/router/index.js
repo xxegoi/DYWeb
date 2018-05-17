@@ -11,6 +11,7 @@ import ColorNoList from '@/components/admin/JXC/ColorNO/ColorList.vue'
 import Gylc from '@/components/admin/JXC/GYLC/List.vue'
 import Gylog from '@/components/admin/Jxc/GYLC/GYLCLog.vue'
 import TestData from '@/components/admin/Jxc/TestData/TestData_List.vue'
+import System from '@/components/admin/System/System.vue'
 
 Vue.use(Router)
 
@@ -55,6 +56,9 @@ export default new Router({
         },{
           path:'TestData',
           component:TestData
+        },{
+          path:'System',
+          component:System
         }
       ]
     }

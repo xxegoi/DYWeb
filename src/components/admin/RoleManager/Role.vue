@@ -76,10 +76,10 @@ export default {
           }
         })
         .catch(response => {
-          this.$message.error(response.message);
+          console.log(response);
         });
       this.$axios
-        .get("/api/UserManage/getlist", { params: { isAll: true } })
+        .get("/api/UserManage/getall")
         .then(res => {
           if (res.data.Status === "success") {
             this.Users = res.data.Data;
