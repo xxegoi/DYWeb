@@ -104,6 +104,7 @@ export default {
 
 #content {
   border-bottom: 1px solid rgb(216, 230, 236);
+  height:850px;
 }
 
 #content .el-container {
