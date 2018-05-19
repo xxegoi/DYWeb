@@ -42,10 +42,20 @@
                   <i class="el-icon-search"></i>
                   查询
                   </el-button>
+
+                  <el-button type="primary" size="small" @click="_printPreview">
+                  <i class="el-icon-view"></i>
+                  打印预览
+                  </el-button>
+
             </el-row>
         </el-row>
         <el-row id="table">
-            <el-table border :data="yzks" v-loading="loading" height="600" size="small">
+            <el-table border :data="yzks" v-loading="loading" height="600" size="small" ref="multipleTable" @selection-change="handleSelectionChange">
+              <el-table-column
+                type="selection"
+                width="55">
+              </el-table-column>
               <el-table-column align="center" label="客户名称" prop="customerName"></el-table-column>
               <el-table-column align="center" label="布类名称" show-overflow-tooltip  prop="itemName"></el-table-column>
               <el-table-column align="center" label="规格型号" show-overflow-tooltip  prop="itemModel"></el-table-column>
@@ -83,18 +93,26 @@
         <el-dialog  title="工艺路线" :fullscreen="false" width="70%" :visible.sync="GYLCVisible" center >
             <GYLC :fgh.sync="selectedGH" :workflow="workflow" :gxhb="gxhb" :activeIndex="activeIndex" />
         </el-dialog>
+
+        <el-dialog :fullscreen="true"  :visible.sync="yzkPrintVisible" center >
+            <YzkPrintDetal :printList.sync="multipleSelection" />
+        </el-dialog>
+
     </div>
 </template>
 
 <script>
 import YzkDetail from "./YzkDetail.vue";
 import GYLC from "../GYLC/View.vue";
+import YzkPrintDetal from "./YzkPrintDetail.vue";//20180517k
+
 export default {
   name: "YZK",
   data() {
     return {
       condition: {
         daterange: [],
+        multipleSelection: [],//20180517多行选择存放处
         billNo: "",
         fgh: "",
         orderNo: "",
@@ -109,6 +127,7 @@ export default {
       total: 0,
       yzkDetailVisible: false,
       GYLCVisible: false,
+      yzkPrintVisible : false,//20180517
       selectedYzk: {
         xm: [],
         gy: [],
@@ -146,6 +165,23 @@ export default {
           console.log(response.message);
           this.loading = false;
         });
+    },
+    //20180517
+    handleSelectionChange(val) {
+
+        this.multipleSelection = val;
+    },
+    //20180517
+    _printPreview()
+    {
+        if(this.multipleSelection.length==0)
+        {
+          this.$message.error("请先选择打印内容！");
+        }
+        else{
+           this.yzkPrintVisible=true;
+        }
+
     },
     pageChange(val) {
       this.condition.page = val;
@@ -267,7 +303,8 @@ export default {
   },
   components: {
     YzkDetail,
-    GYLC
+    GYLC,
+    YzkPrintDetal,
   }
 };
 </script>

@@ -11,6 +11,7 @@ import ColorNoList from '@/components/admin/JXC/ColorNO/ColorList.vue'
 import Gylc from '@/components/admin/JXC/GYLC/List.vue'
 import Gylog from '@/components/admin/Jxc/GYLC/GYLCLog.vue'
 import TestData from '@/components/admin/Jxc/TestData/TestData_List.vue'
+import PrintDetail from '@/components/admin/JXC/YZK/YzkPrintDetail.vue'
 
 Vue.use(Router)
 
@@ -21,6 +22,11 @@ export default new Router({
       name: 'Login',
       component: Login
     },
+    // {
+    //   path:'/PrintDetail',
+    //   name: 'PrintDetail',
+    //   component:PrintDetail
+    // },
     {
       path: '/Admin',
       name: 'Admin',
