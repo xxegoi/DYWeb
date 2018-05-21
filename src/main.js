@@ -50,7 +50,13 @@ Vue.prototype.$axios.interceptors.response.use(res => {
           router.replace('/')
         }, 4000);
       }else{
+        
         vm.$message.error(err.response.data.Message)
+        if(err.response.data.Message.search('/登录超时/')!==-1){
+         setTimeout(() => {
+           router.replace('/');
+         }, 4000); 
+        }
       }
       
   }
