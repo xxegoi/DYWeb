@@ -18,7 +18,7 @@
       <el-row>
         <el-col :span="6" :offset="19">
           <!-- <VueBarcode style="width:150px;height:50px;" :value="getGH()" :options="{ displayValue: false }"></VueBarcode> -->
-          <barcode :value="getGH()" width="1" height="50" display-value="false" ></barcode>
+          <barcode :value="getGH()" width="1" height="30" margin="0" display-value="false" ></barcode>
         </el-col>
       </el-row>
 
@@ -96,7 +96,7 @@
           </el-row>
           <el-row>
             <el-col :span="8" class="rowCell">匹数/重量</el-col>
-            <el-col :span="16" style="font-size:20px;" class="rowCell">&nbsp&nbsp<span style="font-size:15px;">{{printData.qty}}</span>匹&nbsp&nbsp<span style="font-size:15px;">{{printData.weight}}</span>KG</el-col>
+            <el-col :span="16" style="font-size:20px;" class="rowCell">&nbsp&nbsp&nbsp<span style="font-size:15px;">{{printData.qty}}</span>匹&nbsp&nbsp<span style="font-size:15px;">{{printData.weight}}</span>KG</el-col>
           </el-row>
         </el-col>
       </el-row>
@@ -114,7 +114,7 @@
                 <el-col class="rowCell">成品要求:<span style="font-size:15px;">{{printData.dxfk}}</span></el-col>
               </el-row>
               <el-row>
-                <el-col class="rowCell">下机克重:&nbsp&nbsp<span></span> g/㎡成品克重:&nbsp&nbsp<span style="font-size:15px;">{{printData.fkz}}</span>g/㎡</el-col>
+                <el-col class="rowCell">下机克重:&nbsp&nbsp<span></span> g/㎡成品克重:&nbsp&nbsp&nbsp<span style="font-size:15px;">{{printData.fkz}}</span>g/㎡</el-col>
               </el-row>
               <el-row>
                 <el-col :span="2" id="ldyq">牢度要求</el-col>
@@ -127,13 +127,13 @@
           </el-row>
 
           <el-row>
-            <el-col :span="24" id="scgylc">生产工艺流程:</br></br></br><span style="font-size:15px;">{{flow}}</span></el-col>
+            <el-col :span="24" id="scgylc">生产工艺流程:</br></br></br><span style="font-size:20px;">{{flow}}</span></el-col>
           </el-row>
         </el-col>
 
         <el-col :span="9">
           <el-row>
-            <el-col class="rowCell">包装要求: 纸筒:<span style="font-size:15px;">{{printData.fzt}}</span> 加重:<span style="font-size:15px;">{{printData.fjz}}</span> 胶袋:&nbsp<span style="font-size:15px;">{{printData.fjd}}</span></el-col>
+            <el-col class="rowCell">包装要求:纸筒:<span style="font-size:20px;">{{printData.fzt}}</span>加重:<span style="font-size:20px;">{{printData.fjz}}</span>胶袋:<span style="font-size:20px;">{{printData.fjd}}</span></el-col>
           </el-row>
           <el-row>
             <el-col id="bz">
@@ -277,6 +277,8 @@
     border-style: solid;
     border-width: 1px;
     height: 30px;
+    overflow:hidden;
+    white-space:nowrap;
   }
 
   .cellstyle1
@@ -351,6 +353,7 @@
 
   #scgylc {
     height: 100px;
+    width:450px;
     text-align: left;
     border-style: solid;
     border-width: 1px;
