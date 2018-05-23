@@ -16,9 +16,9 @@
       </el-row> -->
 
       <el-row>
-        <el-col :span="6" :offset="19">
+        <el-col :span="6" :offset="17">
           <!-- <VueBarcode style="width:150px;height:50px;" :value="getGH()" :options="{ displayValue: false }"></VueBarcode> -->
-          <barcode :value="getGH()" width="1" height="30" margin="0" display-value="false" ></barcode>
+          <barcode :value="getGH()" width="2" height="30" margin="0" display-value="false" ></barcode>
         </el-col>
       </el-row>
 
@@ -127,7 +127,7 @@
           </el-row>
 
           <el-row>
-            <el-col :span="24" id="scgylc">生产工艺流程:</br></br></br><span style="font-size:20px;">{{flow}}</span></el-col>
+            <el-col :span="24" id="scgylc">生产工艺流程:<br/><br/><br/><span style="font-size:20px;">{{flow}}</span></el-col>
           </el-row>
         </el-col>
 
@@ -137,7 +137,7 @@
           </el-row>
           <el-row>
             <el-col id="bz">
-              备注:</br></br><span style="font-size:15px;">{{printData.note}}</span>
+              备注:<br/><br/><span style="font-size:15px;">{{printData.note}}</span>
             </el-col>
           </el-row>
         </el-col>
@@ -240,7 +240,7 @@
     width: 793px; 
     margin-left: auto;
     margin-right: auto;
-    margin-top: -10px;
+    margin-top: 75px;
     font-family: SimSun;
     /* border-style: solid;
     border-width: 1px; */
